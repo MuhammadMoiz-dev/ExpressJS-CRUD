@@ -23,6 +23,31 @@ app.post('/user', (req, res) => {
 })
 
 
+app.patch('/user/:id', (req, res) => {
+    const { id } = req.params
+    const user = req.body
+    let update = users.find(data => {
+        return data.id == id
+    })
+    console.log(update);
+    Object.assign(update, { ...user, id })
+
+    res.send(users)
+
+
+    // users = users.filter(user => user.id != id)
+    // users.push({
+    //     name: user.name,
+    //     age: user.age,
+    //     id: id
+    // })
+    // console.log(user);
+    // console.log(users);
+
+
+
+})
+
 
 
 app.delete('/user/:id', (req, res) => {
