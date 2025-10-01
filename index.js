@@ -33,19 +33,6 @@ app.patch('/user/:id', (req, res) => {
     Object.assign(update, { ...user, id })
 
     res.send(users)
-
-
-    // users = users.filter(user => user.id != id)
-    // users.push({
-    //     name: user.name,
-    //     age: user.age,
-    //     id: id
-    // })
-    // console.log(user);
-    // console.log(users);
-
-
-
 })
 
 
